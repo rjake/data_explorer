@@ -52,13 +52,14 @@ $('.navbar-inverse').removeClass('navbar-inverse').addClass('navbar-default');
 ```
 
 
-```{r}
+```{r workspace}
 # load data in 'global' chunk so it can be shared by all users of the dashboard
     library(tidyverse)
     library(lubridate)
     library(DT)
     library(shiny)
     library(shinyWidgets)
+    library(odbc)
     #library(shinydashboard)
 
 #custom functions
@@ -369,4 +370,3 @@ observe({
 
 dataTableOutput("get_table")
 ```
-

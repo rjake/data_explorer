@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1528431857917.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "F9653C5",
+    "lastKnownWriteTime" : 1528431698,
+    "last_content_update" : 1528431698,
+    "path" : "~/GitHub/data_explorer/data_explorer_orig.Rmd",
+    "project_path" : "data_explorer_orig.Rmd",
+    "properties" : {
+        "cursorPosition" : "172,19",
+        "scrollLine" : "103"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
