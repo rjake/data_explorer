@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1528408765798.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "13|23|47|0|\n355|16|379|0|\n",
+    "hash" : "0",
+    "id" : "404E2561",
+    "lastKnownWriteTime" : 1528425880,
+    "last_content_update" : 1528425880507,
+    "path" : "~/GitHub/data_explorer/take2.Rmd",
+    "project_path" : "take2.Rmd",
+    "properties" : {
+        "cursorPosition" : "399,0",
+        "docOutlineSize" : "123.87052555882701",
+        "docOutlineVisible" : "1",
+        "scrollLine" : "308",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

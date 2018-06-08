@@ -1,0 +1,13 @@
+shinyApp(
+    ui = fluidPage(
+        textInputAddon(inputId = "id", label = "Label", placeholder = "Username", addon = icon("at")),
+        verbatimTextOutput(outputId = "out")
+    ),
+    server = function(input, output) {
+        output$out <- renderPrint({
+            input$id
+        })
+    }
+)
+}
+
