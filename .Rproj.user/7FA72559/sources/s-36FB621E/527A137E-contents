@@ -1,0 +1,22 @@
+#####
+install.packages("ggmap")
+install.packages("ggplot2")
+#####
+library(ggmap)
+library(ggplot2)
+options(scipen=999)
+
+setwd("J:/Portfolio/Mural Arts")
+
+#read data
+murals <- read.csv(file="MuralAddresses.csv", header=TRUE, stringsAsFactors = FALSE,sep=",")
+murals <- murals[1:722,]
+murals$GeoAddress <- paste(murals$NewAddress,", Philadelphia, PA")
+
+#geocode
+ListGeo <- geocode(Murals$GeoAddress,output = "more",messaging=TRUE)
+
+MuralAddressFinal <- cbind(Murals, ListGeo)
+write.csv(MuralAddressFinal, file = "MuralAddressFinal.csv")
+
+head(MuralAddressFinal)

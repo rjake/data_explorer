@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1528553062053.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "E6444AF9",
+    "lastKnownWriteTime" : 1528684278,
+    "last_content_update" : 1528684278271,
+    "path" : "~/GitHub/data_explorer/data_explorer.Rmd",
+    "project_path" : "data_explorer.Rmd",
+    "properties" : {
+        "cursorPosition" : "254,31",
+        "docOutlineSize" : "127",
+        "docOutlineVisible" : "1",
+        "scrollLine" : "250"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
