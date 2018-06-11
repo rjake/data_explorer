@@ -258,7 +258,7 @@ Column {.tabset}
 renderPlot({
 
     p <- 
-        ggplot(get_data()) +
+        ggplot(filtered_data()) +
         get(get_geom())()
 
     if (get_x() != '.')  p <- p + aes_string(x = eval(get_x()))
@@ -305,7 +305,26 @@ fluidRow(tags$style(mycss), span(class = "courier_font"
 
 ```{r}
 output$gg_call <- 
+    
     renderText({
+        
+        get_theme <- ""
+        
+        if(input$show_x_axis) {
+            x_axis  <- 'axis.ticks.x = element_blank(), axis.text.x = element_blank()'
+        }
+        if (input$show_y_axis) {
+            y_axis  <- 'axis.ticks.y = element_blank(), axis.text.y = element_blank()'
+        }
+
+        if(input$show_x_axis && input$show_y_axis){
+            get_theme <- '+<br>theme(axis.ticks = element_blank(), axis.text = element_blank())'
+        } else if(input$show_x_axis){
+            get_theme <- paste0('+<br>theme(', x_axis, ")")
+        } else if(input$show_y_axis){
+            get_theme <- paste0('+<br>theme(', y_axis, ")")
+        }
+
         HTML( 
            paste0('ggplot(',
               #
@@ -320,20 +339,14 @@ output$gg_call <-
               '))',
               ifelse(input$jitter, '+<br>geom_jitter()', ''),
               ifelse(facets() != '. ~ .',
-                     paste0('+facet_grid(', facets(), ', scales = "free", space = "free")'), ''),
+                     paste0('+ <br>facet_grid(', facets(), ', scales = "free", space = "free")'), ''),
               ifelse(input$smooth, '+<br>geom_smooth()', ''),
               ifelse(input$coord, '+<br>coord_flip()', ''),
               ifelse(get_geom() == '+<br>geom_col',
                      paste0('+<br>labs(y = "sum of ', get_y(), '")'), ''),
-              ifelse(input$show_x_axis | input$show_y_axis,
-                     paste0('+<br>theme(',
-                            ifelse(input$show_x_axis, 
-                                   'axis.ticks.x = element_blank(), axis.text.x = element_blank()', ''),
-                            ifelse(input$show_y_axis, 
-                                   'axis.ticks.y = element_blank(), axis.text.y = element_blank()', ''),
-                            ')', collapse = ","), "")
+              paste0(get_theme)
               )
-         ) 
+         )
 })
 
 ```
