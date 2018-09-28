@@ -272,6 +272,11 @@ renderPlot({
     if (input$jitter)       p <- p + geom_jitter()
     if (input$smooth)       p <- p + geom_smooth()
     if (input$coord)        p <- p + coord_flip()
+
+    if (get_geom() == 'geom_point') p <- p + aes_(size = 2) + guides(size = F) + scale_size(range = c(2, 2))
+    if (get_geom() == 'geom_count') p <- p + scale_size(range = c(2, 6))
+
+    
     if (get_geom() == 'geom_col') p <- p + labs(y = paste0('sum of ', get_y()))
     if(input$show_x_axis){  
       show_x_text <- element_blank()
