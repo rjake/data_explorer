@@ -253,7 +253,7 @@ fluidRow(tags$style(mycss), span(class = "checkboxes",
 
 Column {.tabset}
 -------------------------------------
-###ggplot
+### ggplot
 ```{r get_plot}
 renderPlot({
 
@@ -302,7 +302,7 @@ renderPlot({
 
 ```
 
-###code
+### code
 ```{r get_code}
 fluidRow(tags$style(mycss), span(class = "courier_font"
   , htmlOutput("gg_call")))
